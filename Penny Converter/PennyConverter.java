@@ -22,9 +22,7 @@ public class PennyConverter {
             System.out.print("Please enter how many pennies you have: ");
 
             // Store next integer
-            int pennies = s.nextInt();
-
-            return pennies;
+            return s.nextInt();
         } catch (InputMismatchException e) {
             // When a type int is not returned
             System.out.print("\nThat isn't a number.\n\n");
