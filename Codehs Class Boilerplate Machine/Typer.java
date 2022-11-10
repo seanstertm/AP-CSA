@@ -48,6 +48,11 @@ public class Typer {
             } else {
                 Press(KeyEvent.getExtendedKeyCodeForChar(letter));
             }
+            // try {
+            //     Thread.sleep(50);
+            // } catch (InterruptedException e) {
+            //     Thread.currentThread().interrupt();
+            // }
         }
     }
 
