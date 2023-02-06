@@ -82,7 +82,7 @@ public class ClassBoilerplate {
         // This String join method essentially turns the List<WrittenVariable> into 
         // List<String> by turning it to a stream, mapping each item to a string, then 
         // turning the stream back into a list to be joined with commas
-        Typer.Type("public " + name + "(" + String.join(", ", vars.stream().map(var -> var.toString()).toList()) + ") ");
+        Typer.Type("public " + name + "(" + String.join(", ", (vars.stream().map(var -> var.toString())).toList()) + ") ");
         Typer.BracketEnter();
         for(WrittenVariable var : vars) {
             Typer.Type("this." + var.getName() + " = " + var.getName() + ";");
