@@ -1,3 +1,4 @@
+import java.nio.channels.NotYetConnectedException;
 import java.util.*;
 
 public class MagicSquare
@@ -18,6 +19,8 @@ public class MagicSquare
         setMagicNumber();
         if(size % 2 == 1) {
             createOddMagicSquare();
+        } else { 
+            throw new NotYetConnectedException();
         }
 
         long end = System.currentTimeMillis();
@@ -40,14 +43,16 @@ public class MagicSquare
                 index = upAndRight(index);
             } else {
                 index += size;
-                printSquare();
+                if(index >= size * size) {
+                    index -= size * size;
+                }
             }
         }
         printSquare();
     }
 
     private static int upAndRight(int index) {
-        int newIndex = index - 2;
+        int newIndex = index - (size - 1);
         if(index % size == size - 1) {
             newIndex -= size;
         }
