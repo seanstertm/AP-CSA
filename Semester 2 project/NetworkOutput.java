@@ -6,4 +6,12 @@ public class NetworkOutput {
         this.outputs = outputs;
         this.predictedClass = predictedClass;
     }
+
+    public String toString() {
+        String sentence = "returned index: " + predictedClass;
+        for(double output : outputs) {
+            sentence += "\n" + output;
+        }
+        return sentence;
+    }
 }
